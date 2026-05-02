@@ -7,15 +7,15 @@ int search(vector<int>& nums, int target) {
     int left = 0;
     int right = size - 1;
     while(left <= right){ // important to add <= not < only
-        int center =  left + ((right - left) / 2); // distance + offset (like the window)
-        if(target == nums[center]){
-            return center;
+        int mid =  left + ((right - left) / 2); // distance + offset (like the window)
+        if(target == nums[mid]){
+            return mid;
         }
-        if(target > nums[center]){
-            left = ++center;
+        if(target > nums[mid]){
+            left = ++mid;
         }
         else{
-            right = --center;
+            right = --mid;
         }
     }
     return -1;
